@@ -3,7 +3,7 @@
 
 Além disso, hospedei o jogo em uma rede local e configirei o arquivo /etc/hosts, que é um arquivo do sistema operacional que converte nomes de host ou nomes de domínio em endereços IP. Dessa forma, era possível acessar o servidor web — implementado com Nginx — simplesmente digitando http://destroyer no navegador, desde que o dispositivo estivesse conectado à mesma rede.
 
-<h3>🔎Como hospedei meu site em um servidor linux: </h3>
+<h2>🔎Como hospedei meu site em um servidor linux: </h2>
 Para hospedar um site em um servidor, o primeiro passo é configurar um IP fixo para o servidor, uma vez que, por padrão, o protocolo DHCP atribui endereços IP dinâmicos que podem mudar com frequência.
 Para isso eu defini um IP estático em um servidor Ubuntu através do terminal. O Ubuntu utiliza a utility Netplan para fazer configurações de rede.
 O Netplan atua como um “renderizador de abstração de configuração de rede”. Isso significa que ele vai fornecer uma camada na qual você pode escrever as suas configurações de rede em um arquivo YAML, e a parte de backend usada para executar essas configurações é abstraída do usuário. O Netplan  vai traduzir essas configurações para um dos renderizadores suportados:
@@ -33,7 +33,7 @@ Eu usei o renderizador networkd. O arquivo abaixo está no caminho /etc/netplan.
         search:
           - "laboratorio.local"</code></pre>
 
-<h4>✅Campos do arquivo:</h4>
+<h2>✅Campos do arquivo:</h2>
 <ul>
   <li><strong>renderer</strong>: O renderizador indica qual a backend do Netplan será usada para aplicar as configurações. </li>
   <li><strong>ethernets</strong>: Essa seção especifica que a configuração é para interfaces ethernets. </li>
@@ -48,7 +48,7 @@ pois este determina que apenas o usuário root tem permissão de leitura e escri
 Agora você precisa aplicar as mudanças ao netplan: 
 <pre><code>sudo netplan apply</code></pre>
   
-<h4>👩‍💻Configurando servidor web:</h4>
+<h2>👩‍💻Configurando servidor web:</h2>
 <p>Eu usei o nginx como webserver, caso queira usá-lo você precisa ter certeza de que ele está instalado no seu computador.</p>
 <p>Para isso execute o seguinte comando:
 <pre><code>nginx -v</code></pre>
@@ -76,7 +76,7 @@ com as seguintes diretivas:</p>
   <li>index: Define o arquivo principal que será carregado. </li>
   <li>location / : em location eu defini quem pode acessar esse webserver.</li>
 </ul>
-🔗O próximo passo é criar um link simbólico de sites-available para sites-enaibled.
+<h4>🔗O próximo passo é criar um link simbólico de sites-available para sites-enaibled</h4>
 <pre><code>ln -s /etc/nginx/sites-available/meusite /etc/nginx/sites-enabled</code></pre>
 Depois teste se suas configurações estão certas com o comando:
 <pre><code>nginx -t </code></pre>
