@@ -33,7 +33,7 @@ Eu usei o renderizador networkd. O arquivo abaixo está no caminho /etc/netplan.
         search:
           - "laboratorio.local"</code></pre>
 
-<h4>Campos do arquivo:</h4>
+<h4>✅Campos do arquivo:</h4>
 <ul>
   <li><strong>renderer</strong>: O renderizador indica qual a backend do Netplan será usada para aplicar as configurações. </li>
   <li><strong>ethernets</strong>: Essa seção especifica que a configuração é para interfaces ethernets. </li>
@@ -48,7 +48,7 @@ pois este determina que apenas o usuário root tem permissão de leitura e escri
 Agora você precisa aplicar as mudanças ao netplan: 
 <pre><code>sudo netplan apply</code></pre>
   
-<h4>Configurando servidor web:</h4>
+<h4>👩‍💻Configurando servidor web:</h4>
 <p>Eu usei o nginx como webserver, caso queira usá-lo você precisa ter certeza de que ele está instalado no seu computador.</p>
 <p>Para isso execute o seguinte comando:
 <pre><code>nginx -v</code></pre>
@@ -76,7 +76,7 @@ com as seguintes diretivas:</p>
   <li>index: Define o arquivo principal que será carregado. </li>
   <li>location / : em location eu defini quem pode acessar esse webserver.</li>
 </ul>
-O próximo passo é criar um link simbólico de sites-available para sites-enaibled.
+🔗O próximo passo é criar um link simbólico de sites-available para sites-enaibled.
 <pre><code>ln -s /etc/nginx/sites-available/meusite /etc/nginx/sites-enabled</code></pre>
 Depois teste se suas configurações estão certas com o comando:
 <pre><code>nginx -t </code></pre>
@@ -84,4 +84,4 @@ Reinicie o nginx:
 <pre><code>systemctl restart nginx</code></pre>
 Certifique-se de que ele está ativo:
 <pre><code>systemctl status nginx</code></pre>
-Pronto! Agora qualquer dispositivo que esteja na sua rede pode acessar o seu site através do ip ou através do nome de domínio, basta digitar http://nome_de_domínio_que_vc_configurou e já pode jogar!
+🥳Pronto! Agora qualquer dispositivo que esteja na sua rede pode acessar o seu site através do ip ou através do nome de domínio, basta digitar http://nome_de_domínio_que_vc_configurou e já pode jogar!
