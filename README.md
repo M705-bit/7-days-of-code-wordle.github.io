@@ -3,7 +3,7 @@
 
 Além disso, hospedei o jogo em uma rede local e configirei o arquivo /etc/hosts, que é um arquivo do sistema operacional que converte nomes de host ou nomes de domínio em endereços IP. Dessa forma, era possível acessar o servidor web — implementado com Nginx — simplesmente digitando http://destroyer no navegador, desde que o dispositivo estivesse conectado à mesma rede.
 
-<h3>Como hospedei meu site em um servidor linux: </h3>
+<h3>🔎Como hospedei meu site em um servidor linux: </h3>
 Para hospedar um site em um servidor, o primeiro passo é configurar um IP fixo para o servidor, uma vez que, por padrão, o protocolo DHCP atribui endereços IP dinâmicos que podem mudar com frequência.
 Para isso eu defini um IP estático em um servidor Ubuntu através do terminal. O Ubuntu utiliza a utility Netplan para fazer configurações de rede.
 O Netplan atua como um “renderizador de abstração de configuração de rede”. Isso significa que ele vai fornecer uma camada na qual você pode escrever as suas configurações de rede em um arquivo YAML, e a parte de backend usada para executar essas configurações é abstraída do usuário. O Netplan  vai traduzir essas configurações para um dos renderizadores suportados:
