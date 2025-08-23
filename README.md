@@ -35,12 +35,12 @@ Eu usei o renderizador networkd. O arquivo abaixo está no caminho /etc/netplan.
 
 <h4>Campos do arquivo:</h4>
 <ul>
-  <li>renderer: O renderizador indica qual a backend do Netplan será usada para aplicar as configurações. </li>
-  <li>ethernets: Essa seção especifica que a configuração é para interfaces ethernets. </li>
-  <li>routers: Essa seção define as rotas estáticas, a linha “to: default” e “via: ip” especifica que os pacotes devem ser mandados pela rota padrão, via endereço do gateway. </li>
-  <li>nameserveres: Esse campo especifica os servidores de DNS a serem usados pelo sistema. Essa seção é muito importante para resolver os nomes de domínio até os respectivos endereços de IP. </li>
-  <li>search: No Netplan, o campo search é usado dentro da seção nameservers para definir domínios de busca DNS. Isso permite que você resolva nomes de host incompletos automaticamente com base nesses domínios.</li>
-  <li>dhcp4/dhcp6: Nesses campos nós desabilitamos o DHCP para prevenir a designação automática de endereços IP. </li>
+  <li><strong>renderer</strong>: O renderizador indica qual a backend do Netplan será usada para aplicar as configurações. </li>
+  <li><strong>ethernets</strong>: Essa seção especifica que a configuração é para interfaces ethernets. </li>
+  <li><strong>routers</strong>: Essa seção define as rotas estáticas, a linha “to: default” e “via: ip” especifica que os pacotes devem ser mandados pela rota padrão, via endereço do gateway. </li>
+  <li><strong>nameserveres</strong>: Esse campo especifica os servidores de DNS a serem usados pelo sistema. Essa seção é muito importante para resolver os nomes de domínio até os respectivos endereços de IP. </li>
+  <li><strong>search</strong>: No Netplan, o campo search é usado dentro da seção nameservers para definir domínios de busca DNS. Isso permite que você resolva nomes de host incompletos automaticamente com base nesses domínios.</li>
+  <li><strong>dhcp4/dhcp6</strong>: Nesses campos nós desabilitamos o DHCP para prevenir a designação automática de endereços IP. </li>
 </ul>
 Após ter criado o arquivo e escrito as configurações você deve tornar o arquivo executável, eu coloquei o código 600, <br />
 pois este determina que apenas o usuário root tem permissão de leitura e escrita nesse arquivo. 
