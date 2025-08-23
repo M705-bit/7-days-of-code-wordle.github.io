@@ -2,7 +2,6 @@
 <p>Este jogo foi inspirado no Wordle. Desenvolvi a página utilizando HTML, dei forma com CSS e a funcionalidade ficou por conta do JavaScript.
 Eu hospedei o jogo no Github Pages, para acessá-lo basta clicar no link abaixo:
 <h2>🔗 Link do jogo!: https://m705-bit.github.io/7-days-of-code-wordle.github.io/</h2>
-
 Além disso, hospedei o jogo em uma rede local e configirei o arquivo /etc/hosts, que é um arquivo do sistema operacional que converte nomes de host ou nomes de domínio em endereços IP. Dessa forma, era possível acessar o servidor web — implementado com Nginx — simplesmente digitando http://destroyer no navegador, desde que o dispositivo estivesse conectado à mesma rede.
 
 <h2>🔎Como hospedei meu site em um servidor linux: </h2>
