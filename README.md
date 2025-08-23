@@ -87,3 +87,7 @@ Certifique-se de que ele está ativo:
 <br>
 <h2>🥳Pronto!</h2>
 Agora qualquer dispositivo que esteja na sua rede pode acessar o seu site através do ip ou através do nome de domínio, basta digitar <strong>http://nome_de_domínio_que_vc_configurou</strong> e já pode jogar!
+
+<h2>Como acessar o site que eu criei?</h2>
+Eu hospedei o jogo no Github Pages, dessa forma você pode visualizar o meu projeto! 
+<h2>🔗 Link do jogo!: https://m705-bit.github.io/7-days-of-code-wordle.github.io/</h2>
