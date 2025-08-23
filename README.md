@@ -84,4 +84,6 @@ Reinicie o nginx:
 <pre><code>systemctl restart nginx</code></pre>
 Certifique-se de que ele está ativo:
 <pre><code>systemctl status nginx</code></pre>
-🥳Pronto! Agora qualquer dispositivo que esteja na sua rede pode acessar o seu site através do ip ou através do nome de domínio, basta digitar http://nome_de_domínio_que_vc_configurou e já pode jogar!
+<br>
+<h2>🥳Pronto!</h2>
+Agora qualquer dispositivo que esteja na sua rede pode acessar o seu site através do ip ou através do nome de domínio, basta digitar <strong>http://nome_de_domínio_que_vc_configurou</strong> e já pode jogar!
