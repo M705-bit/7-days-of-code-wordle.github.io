@@ -50,7 +50,7 @@ Agora você precisa aplicar as mudanças ao netplan:
 <pre><code>sudo netplan apply</code></pre>
   
 <h2>👩‍💻Configurando servidor web:</h2>
-<p>Eu usei o nginx como webserver, caso queira usá-lo você precisa ter certeza de que ele está instalado no seu computador.</p>
+<p>Eu usei o nginx como webserver, caso queira usá-lo, você precisa ter certeza de que ele está instalado no seu computador.</p>
 <p>Para isso execute o seguinte comando:
 <pre><code>nginx -v</code></pre>
   
