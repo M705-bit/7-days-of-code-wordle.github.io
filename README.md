@@ -46,7 +46,7 @@ Após ter criado o arquivo e escrito as configurações você deve tornar o arqu
 pois este determina que apenas o usuário root tem permissão de leitura e escrita nesse arquivo. 
 <pre><code>$ sudo chmod 600 /etc/netplan/01-netconfig.yaml</code></pre>
 Agora você precisa aplicar as mudanças ao netplan: 
-<pre><code>sudo netplan apply</code><pre>
+<pre><code>sudo netplan apply</code></pre>
 <h4>Configurando servidor web:</h4>
 <p>Eu usei o nginx como webserver, caso queira usá-lo você precisa ter certeza de que ele está instalado no seu computador.</p>
 <p>Para isso execute o seguinte comando:
