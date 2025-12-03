@@ -1,4 +1,4 @@
-import palavras from '/palavras/saida.js';
+import palavras from './palavras/saida.js';
 //criei as variáveis globais guess e word
 window.guess = [];
 window.word = "";
