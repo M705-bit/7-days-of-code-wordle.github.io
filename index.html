@@ -1,70 +1,189 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-    <head> 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script type="module" src="static/index.js"></script>
-        <title>Wordle</title>
-        
-        <link rel="stylesheet" href="static/styles.css" />
-    </head>
-   
-    <body>
-        <h1 id="game_status">status: jogando...</h1>
-        <div class="super-container">
-                <div class="container">
-                    <div class="linha-itens">
-                        <div class="item" id="0"></div>
-                        <div class="item" id="1"></div>
-                        <div class="item" id="2"></div>
-                        <div class="item" id="3"></div>
-                        <div class="item" id="4"></div>
-                    </div>
-                    <!--<h1 id="tentativas">Tentativas: </h1>-->
-                    <div class="linha-coracoes">
-                        <div id="tentativas">Tentativas: 5</div>
-                        <div class="coracoes" id="5"></div>
-                        <div class="coracoes" id="6"></div>
-                        <div class="coracoes" id="7"></div>
-                        <div class="coracoes" id="8"></div>
-                        <div class="coracoes" id="9"></div>
-                    </div>
-                </div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termo</title>
+    
+</head>
+<style>
+    :root{
+    --background-color: #121213;
+    --correct-color: #6aaa64;
+    --incorrect-color: #787c7e;
+    --partial-color: #c9b458;
+    --text-color: #ffffff;
+}
 
-            <div class="flex-container">
-                <button class="flex-item">A</button>
-                <button class="flex-item">B</button>
-                <button class="flex-item">C</button>
-                <button class="flex-item">D</button>
-                <button class="flex-item">E</button>
-                <button class="flex-item">F</button>
-                <button class="flex-item">G</button>
-                <button class="flex-item">H</button>
-                <button class="flex-item">I</button>
-                <button class="flex-item">J</button>
-                <button class="flex-item">K</button>
-                <button class="flex-item">L</button>
-                <button class="flex-item">M</button>
-                <button class="flex-item">N</button>
-                <button class="flex-item">O</button>
-                <button class="flex-item">P</button>
-                <button class="flex-item">Q</button>
-                <button class="flex-item">R</button>
-                <button class="flex-item">S</button>
-                <button class="flex-item">T</button>
-                <button class="flex-item">U</button>
-                <button class="flex-item">V</button>
-                <button class="flex-item">W</button>
-                <button class="flex-item">X</button>
-                <button class="flex-item">Y</button>
-                <button class="flex-item">Z</button>
-                <button class="flex-item">Enter</button>
-                <button class="flex-item">Backspace</button>
-            </div>
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*o padding precisa ser de acordo com o tamanho da tela*/
+    justify-content: center;
+    height: 100vh;
+    
+    margin: 0;
+}
+.board,
+.hearts-container {
+    display: grid;
+    grid-template-columns: repeat(5, 60px);
+    gap: 8px;              /* mesmo gap dos tiles */
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.tile {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 2px solid #ccc;
+}
+.correct {
+    background-color: var(--correct-color);
+    color: var(--text-color);
+    border: none;
+}
+.wrong {
+    background-color: var(--incorrect-color);
+    color: var(--text-color);
+    border: none;
+}
+
+.partial {
+    background-color: var(--partial-color);
+    color: var(--text-color);
+    border: none;
+}
+
+h1{
+    color: var(--text-color);
+}
+
+.keyboard {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.keyboard-row {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 6px;
+}
+.key {
+    padding: 12px;
+    background-color: #d3d6da;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.enter {
+    grid-column: span 2;
+    background-color: var(--correct-color);
+    color: var(--text-color);
+}
+
+.heart {
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    transform: rotate(-45deg);
+    position: relative;
+    margin: auto;         /* centraliza dentro da “coluna” */
+}
+
+.heart:before,
+.heart:after {
+    content: "";
+    background-color: red;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+}
+
+.heart:before {
+    top: -10px;
+}
+
+.heart:after {
+    left: 10px;
+}
+
+</style>
+
+<body>
+    <h1>Termo</h1>
+    <!--Linha do tabuleiro de jogo-->
+    <div class="board">
+        <div class="tile" id="tile-0">T</div>
+        <div class="tile" id="tile-1">E</div>
+        <div class="tile" id="tile-2">R</div>    
+        <div class="tile" id="tile-3">M</div>
+        <div class="tile" id="tile-4">O</div>
+    </div>
+
+    <div class="lifes-container">
+        <div class="hearts-container">
+            <div class="heart" id="heart-1"></div>
+            <div class="heart" id="heart-2"></div>
+            <div class="heart" id="heart-3"></div>
+            <div class="heart" id="heart-4"></div>
+            <div class="heart" id="heart-5"></div>
         </div>
-       
-        </body>
+    </div>
+
+<div class="keyboard">
+  <div class="keyboard-row">
+    <button class="key">Q</button>
+    <button class="key">W</button>
+    <button class="key">E</button>
+    <button class="key">R</button>
+    <button class="key">T</button>
+    <button class="key">Y</button>
+    <button class="key">U</button>
+    <button class="key">I</button>
+    <button class="key">O</button>
+    <button class="key">P</button>
+  </div>
+
+  <div class="keyboard-row">
+    <button class="key">A</button>
+    <button class="key">S</button>
+    <button class="key">D</button>
+    <button class="key">F</button>
+    <button class="key">G</button>
+    <button class="key">H</button>
+    <button class="key">J</button>
+    <button class="key">K</button>
+    <button class="key">L</button>
+  </div>
+
+  <div class="keyboard-row">
+    <button class="key enter">ENTER</button>
+    <button class="key">Z</button>
+    <button class="key">X</button>
+    <button class="key">C</button>
+    <button class="key">V</button>
+    <button class="key">B</button>
+    <button class="key">N</button>
+    <button class="key">M</button>
+    <button class="key backspace">⌫</button>
+  </div>
+</div>
+    <script type="module" src="static/index.js"></script>
+</body>
 </html>
-
-
-
-
