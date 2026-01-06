@@ -124,6 +124,10 @@ document.addEventListener("keydown", function(event) {
   document.querySelector(".key.enter")?.click();
   return;
 }
+  if (event.key === "Backspace") {
+    document.querySelector(".key.backspace")?.click();
+    return;
+  }
   const tecla = event.key.toUpperCase(); // 👈 FALTAVA ISSO
   const botao = [...document.querySelectorAll(".key")]
     .find(b => b.textContent.toUpperCase() === tecla);
