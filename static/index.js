@@ -124,7 +124,7 @@ document.addEventListener("keydown", function(event) {
   document.querySelector(".key.enter")?.click();
   return;
 }
-  if (event.key === "Backspace") {
+  if (event.key === "⌫" || event.key === "Backspace") {
     document.querySelector(".key.backspace")?.click();
     return;
   }
