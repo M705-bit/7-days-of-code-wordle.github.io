@@ -33,7 +33,7 @@ Eu usei o renderizador networkd. O arquivo abaixo está no caminho /etc/netplan.
         search:
           - "laboratorio.local"</code></pre>
 
-<h4>Campos do arquivo:<h4>
+<h4>Campos do arquivo:</h4>
 <ul>
   <li>renderer: O renderizador indica qual a backend do Netplan será usada para aplicar as configurações. </li>
   <li>ethernets: Essa seção especifica que a configuração é para interfaces ethernets. </li>
